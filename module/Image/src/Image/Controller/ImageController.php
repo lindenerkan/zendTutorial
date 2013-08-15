@@ -49,12 +49,12 @@ class ImageController extends AbstractActionController
 				
 				$data = $form->getData();
 				$this->sessionContainer->formData = $data;
-
 				
 				
 				$image->exchangeArray($data);
 				$this->getImageTable()->saveImage($image);
 				
+				echo print_r($data);
 				//$response= $this->redirect()->toRoute('image');
 				//$response->setStatusCode(303);
 				//$this->getImageTable()->saveImage($response);

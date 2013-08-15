@@ -18,7 +18,7 @@ class Image
     {
         $this->id     = (isset($data['id'])) ? $data['id'] : null;
         $this->title  = (isset($data['text'])) ? $data['text'] : null;
-        $this->src  = (isset($data['file']['name'])) ? $data['file']['name'] : $data['src'];
+        $this->src  = (isset($data['file']['tmp_name'])) ? $data['file']['tmp_name'] : $data['src'];
     }
     public function setInputFilter(InputFilterInterface $inputFilter)
     {
