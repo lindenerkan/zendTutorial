@@ -5,6 +5,8 @@ return array(
         'Application',
     		'Album',
     		'Image',
+    		'Picture',
+    		'Storyboard',
     		'ZF2FileUploadExamples',
     ),
 

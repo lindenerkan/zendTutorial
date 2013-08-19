@@ -1,0 +1,58 @@
+<?php 	//print_r($data);?>
+<?php foreach ($data as $id=>$row):?>
+ <div class="hero-unit">
+ <?php //print_r($row);?>
+	<?php foreach ($row as $key=>$value): ?>
+		
+			<table>
+				<tr>
+					<td style="width: 300px; padding:10px;">
+						<img alt="" src="../../../<?php echo $this->escapeHtml($value['src']);?>" style="width: 300px">
+					</td>
+					<td style="width: 300px; padding:20px;">
+						<span><?php echo $value['title'];?></span>
+					</td>
+					<td style="width: 100px; padding:40px;">
+						<a href="<?php echo $this->url('storyboard', 	array(
+																			'action' => 'delete',
+																			'data'    => $key,
+																			'id'     => $id,
+																			)
+																	
+														);
+								?>">Delete
+						</a>
+							|
+						<a href="<?php echo $this->url('storyboard', 	array(
+																			'action' => 'edit',
+																			'data'    => $key,
+																			'id'     => $id,
+																			)
+																	
+														);
+								?>">Edit
+						</a>
+					</td>
+								
+				</tr>
+			</table>
+		
+	<?php endforeach; ?>
+<a href="<?php echo $this->url('storyboard', 	array(
+														'action' => 'add',
+														'id'     => $id,
+														)
+																	
+														);
+								?>">Add
+						</a>
+</div>
+<?php endforeach; ?>
+
+
+
+
+
+
+
+

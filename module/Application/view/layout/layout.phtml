@@ -1,4 +1,5 @@
-<?php echo $this->doctype(); ?>
+<?php
+echo $this->doctype(); ?>
 
 <html lang="en">
     <head>
@@ -28,6 +29,8 @@
                             <li><a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Home') ?></a></li>
                             <li><a href="<?php echo $this->url('album') ?>"><?php echo $this->translate('Album') ?></a></li>
                             <li><a href="<?php echo $this->url('image') ?>"><?php echo $this->translate('Images') ?></a></li>
+                            <li><a href="<?php echo $this->url('picture') ?>"><?php echo $this->translate('Pictures') ?></a></li>
+                            <li><a href="<?php echo $this->url('storyboard') ?>"><?php echo $this->translate('Storyboard') ?></a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>
@@ -37,7 +40,7 @@
             <?php echo $this->content; ?>
             <hr>
             <footer>
-                <p>&copy; 2013 by Zend Technologies Ltd. <?php echo $this->translate('All rights reserved.') ?></p>
+                <p>&copy; 2013 by ekaratas. <?php echo $this->translate('All rights reserved.') ?></p>
             </footer>
         </div> <!-- /container -->
         <?php echo $this->inlineScript() ?>

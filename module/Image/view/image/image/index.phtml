@@ -11,10 +11,11 @@ $this->headTitle($title);
 <div>
 
 
-<?php foreach ($images as $image) : ?>    	
-    	<img alt="<?php echo $this->escapeHtml($image->title);?>" src="../../../<?php echo $this->escapeHtml($image->src);?>" style="width: 300px; margin:20px;">
+<?php foreach ($images as $image) : ?>
+    	
+    	<img alt="<?php echo $this->escapeHtml($image->title);?>" src="../../../<?php echo $this->escapeHtml($image->src);?>" style="width: 300px; margin:10px;">
     	<a href="<?php echo $this->url('image',
-                    array('action' => 'delete', 'id' => $image->id));?>">Delete</a>
+                    array('action' => 'delete', 'id' => $image->id));?>">X</a>
 <?php endforeach; ?>
 </div>
 </div>

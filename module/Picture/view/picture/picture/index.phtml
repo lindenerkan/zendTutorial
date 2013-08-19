@@ -1,0 +1,35 @@
+<div class="hero-unit">
+<?php
+
+$title = 'My Pictures';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<p>
+    <a href="<?php echo $this->url('picture', array('action'=>'add'));?>">Add new image</a>
+</p>
+<div>
+
+
+
+ 
+<?php 
+foreach ($pictures as $key=>$image) : 
+?>    	
+    	<img alt="<?php echo $this->escapeHtml($image['title']);?>" src="../../../<?php echo $this->escapeHtml($image['src']);?>" style="width: 300px; margin:10px;">
+    	<a href="<?php echo $this->url('picture',
+                    array('action' => 'delete', 'id' => $key));?>">X</a>
+<?php endforeach; ?>
+
+</div>
+</div>
+<div class="hero-unit">
+<table>
+	<?php foreach ($storyboard as $key=>$data):?>
+		<tr>	
+			<td><img alt="" src="../../../data/tmpuploads/<?php echo $this->escapeHtml($data['src']);?>" style="width: 300px; margin:10px;"></td>
+			<td><?php echo $this->escapeHtml($data['title']);?></td>
+		</tr>
+	<?php endforeach;?>
+</table>
+</div>
