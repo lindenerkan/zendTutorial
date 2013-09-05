@@ -29,7 +29,17 @@ $errorsHelper
             <?php echo $errorsHelper($elem); ?>
         </div>
     </div>
-<img alt="" src="../../../../../<?php echo $this->escapeHtml($e['src']);?>" style="width: 300px">
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#src').click(function()
+			{
+			$('#img').fadeOut(100);
+			//alert($('#img').attr('src'));
+		});
+});
+
+</script>
+<img alt="" id="img" src="../../../../../<?php echo $this->escapeHtml($e['src']);?>" style="width: 300px">
     <?php
     $elem = $form->get('src');
     $elem->setLabelAttributes(array('class' => 'control-label'));
@@ -66,3 +76,4 @@ $errorsHelper
 </fieldset>
 <?php echo $this->form()->closeTag($form); ?>
 </div>
+

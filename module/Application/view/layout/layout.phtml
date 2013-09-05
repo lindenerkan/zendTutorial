@@ -17,7 +17,9 @@ echo $this->doctype(); ?>
         <!-- Scripts -->
         <?php echo $this->headScript()->prependFile($this->basePath() . '/js/html5.js', 'text/javascript', array('conditional' => 'lt IE 9',))
                                       ->prependFile($this->basePath() . '/js/bootstrap.min.js')
-                                      ->prependFile($this->basePath() . '/js/jquery.min.js') ?>
+                                      ->prependFile($this->basePath() . '/js/jquery.min.js')
+								      ->prependFile($this->basePath() . '/js/JotFormAnywhere.js')
+								      ->prependFile($this->basePath() . '/js/JotForm.js') ?>
 
     </head>
     <body>
@@ -31,6 +33,7 @@ echo $this->doctype(); ?>
                             <li><a href="<?php echo $this->url('image') ?>"><?php echo $this->translate('Images') ?></a></li>
                             <li><a href="<?php echo $this->url('picture') ?>"><?php echo $this->translate('Pictures') ?></a></li>
                             <li><a href="<?php echo $this->url('storyboard') ?>"><?php echo $this->translate('Storyboard') ?></a></li>
+                            <li><a href="<?php echo $this->url('survey') ?>"><?php echo $this->translate('Survey') ?></a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>

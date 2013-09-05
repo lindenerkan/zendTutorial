@@ -35,7 +35,7 @@ class StoryboardForm extends Form
         $this->add($file);
 
         // Text Input
-        $text = new Element\Text('title');
+        $text = new Element\Textarea('title');
         $text->setLabel('Text: ');
         $this->add($text);
         

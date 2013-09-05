@@ -1,0 +1,69 @@
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.3.1/jquery.cookie.min.js"></script>
+<?php echo $formID;
+	if($isPublished)
+	{
+		?>
+			<a href="<?php echo $this->url('survey', array('action' => 'surveyview','id' => $formID));?>">
+				Survey Link
+			</a>
+			<br>
+			<a href="#" id="editPublished">Edit Survey </a>(Username / Password: <? echo $user; ?>)
+			<br>
+			<a href="<?php echo $this->url('survey', array('action' => 'result','id' => $formID));?>">
+				Show Results
+			</a>
+				<?php
+	}
+	else 
+	{
+		?>
+		<button id="jotformlogin">Create Survey</button>
+		<a href="<?php echo $this->url('survey', array('action' => 'publish','id' => $projectID));?>">
+			<button id="publish" style="display:none">Publish Survey</button>
+		</a>
+		<button id="edit" style="display:none">Edit Survey</button>
+		<div id="info">Username / Password: <? echo $user; ?></div>
+		
+		<?php
+	}
+?>
+<div id="survey" style="display:none"><script type="text/javascript" src="http://form.jotformeu.com/jsform/<?php echo $formID; ?>"></script></div>
+<script type="text/javascript">
+$("#editPublished").click(function(e) {
+	JF.login(
+        function success() {
+        	JotformAnywhere.editForm(
+        	        "<?php echo $formID; ?>"
+        	    ); 
+        },
+        function error() {
+           // $("#loginresults").html("error during authorization");
+        }
+    );
+});
+
+$("#jotformlogin").click(function(e) {
+	JF.login(
+        function success() {
+        	JotformAnywhere.editForm(
+        	        "<?php echo $formID; ?>"
+        	    );
+        	$("#publish").css("display","block");
+        	$("#survey").css("display","block");
+        	$("#edit").css("display","block");
+        	$("#jotformlogin").css("display","none");
+        	$("#info").css("display","none");    	    
+        },
+        function error() {
+           // $("#loginresults").html("error during authorization");
+        }
+    );
+});
+$("#edit").click(function(e) {
+	JotformAnywhere.editForm(
+	        "<?php echo $formID; ?>"
+	    );
+});
+</script>
+ 
+			

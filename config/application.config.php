@@ -7,7 +7,8 @@ return array(
     		'Image',
     		'Picture',
     		'Storyboard',
-    		'ZF2FileUploadExamples',
+    		'Survey',
+    		//'ZF2FileUploadExamples',
     ),
 
     // These are various options for the listeners attached to the ModuleManager

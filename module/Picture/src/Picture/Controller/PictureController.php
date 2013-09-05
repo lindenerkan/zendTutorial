@@ -20,11 +20,11 @@ class PictureController extends AbstractActionController
 		$jsonData=array(
 					array(
 						'title' => 'img03',
-						'src'   => 'img03.jpg'	
+						'src'   => './data/tmpuploads\img04_52132fd312ac7.jpg'	
 					),
 					array(
 							'title' => 'img04',
-							'src'   => 'img04.jpg'
+							'src'   => './data/tmpuploads\img04_52132fd312ac7.jpg'
 					),
 		);
 		
@@ -34,8 +34,8 @@ class PictureController extends AbstractActionController
 		$dejson=json_decode($json,true);
 		
 		echo $dejson[0]['title'];
-		
 		*/
+		
 		//$storyboard=$this->getStoryboardTable()->fetchAll();
 		$storyboard=$this->getStoryboardTable()->fetchAll();
 		$storyboard=json_decode($storyboard->data,true);

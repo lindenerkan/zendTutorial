@@ -1,0 +1,48 @@
+<?php print_r($results[0]['id']);?>
+<?php if ($results[0]["answers"]):?>
+<table border="2px solid black">
+  <tr>
+  	<th></th>
+	  <? foreach ($results[0]['answers'] as $i=>$title):?>
+	  <th><? echo $title['text'];?></th>
+	  <?  endforeach;?>
+  </tr>
+<? foreach ($results as $key=>$result):?>
+<tr>
+	<td>
+	<? echo $key+1; ?>
+	</td>
+	<?foreach ($result['answers'] as $qno=>$answer):?>
+	<td><? if(isset($answer['answer']))
+			{
+				if(is_array($answer['answer']))
+				{
+					if($answer["type"]=="control_matrix")
+					{
+					?><table><?php
+						foreach ($answer["answer"] as $q=>$a):?>
+							<tr>
+								<td><?php echo $q;?></td>
+								<td><?php echo " : ".$a; ?></td>
+							<tr>
+						<?php endforeach;?>
+					</table><?php
+					}
+					else
+						echo "<br>".$answer['prettyFormat'];
+				?>
+				<br>
+				<? 				
+				}
+				else
+					echo $answer['answer'];
+			} ?>
+	</td>
+	<? endforeach; ?>
+</tr>
+	<? endforeach;?>
+</table>
+<?php
+else:
+	echo "There is no Submission";
+endif;?>

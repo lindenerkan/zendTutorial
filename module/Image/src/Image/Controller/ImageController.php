@@ -14,6 +14,7 @@ class ImageController extends AbstractActionController
 	protected $imageTable;
 	public function indexAction()
 	{
+		 
 		$this->sessionContainer = new Container('image');
 		return new ViewModel(array(
             'images' => $this->getImageTable()->fetchAll(),

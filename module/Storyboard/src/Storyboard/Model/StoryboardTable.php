@@ -17,6 +17,7 @@ class StoryboardTable
     	$resultSet = $this->tableGateway->select();
     	$solved=array();
     	foreach ($resultSet as $key=>$value):
+    	
     	$solved[$value->id]= json_decode($value->data,true);
     	endforeach;
     	return $solved;
